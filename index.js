@@ -66,6 +66,7 @@ using a recursive merge sort methodology.
 
 const mergeSort = (array) =>
 {
+    console.log('sort')
     if (array.length === 0)
     {
         return ('invalid')
@@ -82,8 +83,46 @@ const mergeSort = (array) =>
         console.log(right);
         //calling to mergeSort will slice the array as many times as needed
         //until the array is of length one, where it will be returned
-        return mergeSort(left)
-    }
+        return merge(mergeSort(left), mergeSort(right))
+        //this will call mergeSort(left) and split the left into halves first,
+        //THEN it will merge the result, and THEN the right, and THEN the result
+
+}
 }
 
-console.log(mergeSort([3,6,8,4,]))
+//takes in a left and right array
+function merge(left, right)
+{
+    console.log('merge')
+    //Creates merge array and left/right index holders
+    const merge =[];
+    let li = 0;
+    let ri = 0;
+    while(left.length > li && right.length > ri)
+    {
+        if (left[li] < right[ri])
+        {
+            merge.push(left[li])
+            li++
+        }
+        else
+        {
+            merge.push(right[ri])
+            ri++
+        }
+    }
+    while(left.length > li)
+    {
+        merge.push(left[li])
+        li++
+    }
+    while(right.length > ri)
+    {
+        merge.push(right[ri])
+        ri++
+    }
+
+    return merge;
+}
+
+console.log(mergeSort([3,6,8,4,8,32,4,6,8,4,4,6,7,54]))
