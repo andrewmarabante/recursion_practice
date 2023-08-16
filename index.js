@@ -46,7 +46,14 @@ const fibsRec = (n) =>
     }
     else
     {
-    return [...fibsRec(n - 1)];
+    return [...fibsRec(n - 1), fibsRec(n-1)[n-2]+fibsRec(n-1)[n-3]];
+    /*
+    Ah, ok the syntax was really confusing me, even though it's a very easy problem.
+    SO, after playing around with this for a bit this is what I've come to understand...
+    '...fibsRec(n-1)' tells it to compute everything up until the previous number.
+    'fibsRec(n-1)[n-2]+fibsRec(n-1)[n-3]' gives it a rule to follow to create everything 
+    up to the last number, n.
+    */
     }
 }
-console.log(fibsRec(4))
+console.log(fibsRec(15))
