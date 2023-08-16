@@ -55,5 +55,29 @@ const fibsRec = (n) =>
     up to the last number, n.
     */
     }
+}   
+
+/*
+Build a function mergeSort that takes in an array and returns a sorted array,
+using a recursive merge sort methodology.
+*/
+
+//we are using recursion, so let's think about the base case.
+
+const mergeSort = (array) =>
+{
+    if (array.length === 0)
+    {
+        return ('invalid')
+    }
+    else if (array.length === 1)
+    {
+        return array;
+    }
+    else 
+    {
+        console.log('working')
+    }
 }
-console.log(fibsRec(15))
+
+console.log(mergeSort([3,6,8,4,]))
