@@ -76,7 +76,13 @@ const mergeSort = (array) =>
     }
     else 
     {
-        console.log('working')
+        //This takes the array and slices it into left and right as evenly as possible
+        const left = array.slice(0,Math.floor(array.length/2));
+        const right = array.slice(Math.floor(array.length/2), array.length);
+        console.log(right);
+        //calling to mergeSort will slice the array as many times as needed
+        //until the array is of length one, where it will be returned
+        return mergeSort(left)
     }
 }
 
