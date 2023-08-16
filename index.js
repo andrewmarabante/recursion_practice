@@ -5,7 +5,7 @@ example input of 8, this function should return
 the array [0, 1, 1, 2, 3, 5, 8, 13]. 
 */
 document.getElementById('check').addEventListener('click', fibs);
-
+let array = [0,1,1];
 function fibs(e)
 {
     e.preventDefault();
@@ -16,24 +16,21 @@ function fibs(e)
     }
     else if(num == 1)
     {
-        let array = [0]
-        console.log(array)
+        let array1 = [0]
+        console.log(array1)
     }
     else if(num == 2)
     {
-        let array = [0,1]
-        console.log(array)
+        let array2 = [0,1]
+        console.log(array2)
     }
     else if(num == 3)
     {
-        let array = [0,1,1]
         console.log(array)
     }
     else if(num>=4)
     {
-        for(i=0;i<num;i++)
-        {
-            console.log('working')
-        }
+        array[num-1] = array[num-3] + array[num-2]
+        console.log(array);
     }
 }
