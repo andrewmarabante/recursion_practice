@@ -10,27 +10,28 @@ function fibs(e)
 {
     e.preventDefault();
     let num = document.getElementById("formnum").value;
-    if(num<=0)
+   if(num<=0)
+   {
+    console.log('invalid')
+   }
+   else if (num<=3)
+   {
+    console.log(array)
+   }
+   else
+   {
+    for(i=3;i<num;i++)
     {
-        console.log('Invalid')
-    }
-    else if(num == 1)
-    {
-        let array1 = [0]
-        console.log(array1)
-    }
-    else if(num == 2)
-    {
-        let array2 = [0,1]
-        console.log(array2)
-    }
-    else if(num == 3)
-    {
+        array[i] = array[i-1] + array[i-2]
         console.log(array)
     }
-    else if(num>=4)
-    {
-        array[num-1] = array[num-3] + array[num-2]
-        console.log(array);
-    }
+   }
 }
+/* Problem 2
+Now write another function fibsRec which solves the same problem 
+recursively. This can be done in just a couple of lines (or 1 if you’re
+ crazy, but don’t consider either of these lengths a requirement… just get
+  it done)
+*/
+
+
