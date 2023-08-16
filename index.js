@@ -34,4 +34,19 @@ recursively. This can be done in just a couple of lines (or 1 if you’re
   it done)
 */
 
-
+const fibsRec = (n) =>
+{
+    if(n<=0)
+    {
+    return 'Invalid'
+    }
+    else if (n<=3)
+    {
+    return array
+    }
+    else
+    {
+    return [...fibsRec(n - 1)];
+    }
+}
+console.log(fibsRec(4))
